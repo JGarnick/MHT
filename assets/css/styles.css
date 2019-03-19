@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Markazi+Text');
+
+body{font-family: 'Markazi Text', serif;}
+[type=text]{
+    box-sizing:border-box;
+    padding:5px;
+    border:1px solid black;
+    font-size: 16px;
+}
+[type=text].w-btn{
+    border-bottom-left-radius:3px;
+    border-top-left-radius:3px;
+}
+[type=text].single{
+    border-radius:3px;
+}
+button.w-input{
+    border: 0;
+    padding: 8px;
+    background-color: #565656;
+    color:white;
+    border-bottom-right-radius:3px;
+    border-top-right-radius:3px;
+    cursor:pointer;
+}
+button.w-input:hover{ background-color:#2f2f2f;}
+.flex{display:flex !important}
+.new-entry > :first-child{margin-right:10px;}
+.new-entry > :nth-child(2){margin-right:10px;}
