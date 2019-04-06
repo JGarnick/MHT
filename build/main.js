@@ -21,19 +21,31 @@ requireComponent.keys().forEach(fileName => {
 
 });
 
-(function ($) {
+jQuery(document).ready(function($){
     new Vue({
         el: "#main",
         data() {
             return {
-                title: "Monster Health Tracker"
+                title: "Monster Health Tracker",
+                rows: []
             }
         },
         methods: {
-
+            add_row(e){
+                console.log(e);
+                let row = {
+                    name: "",
+                    health_current: 0,
+                    health_max: 0,
+                    conditions: []
+                };
+            },
+            add_multiple(e){
+                console.log(e);
+            }
         },
         computed: {
 
         }
     });
-})(jQuery);
+});

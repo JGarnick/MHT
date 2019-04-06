@@ -8,12 +8,15 @@
     "devDependencies": {
         "vue-loader": "^15.7.0",
         "vue-mixins": "^0.3.6",
-        "vue-template-compiler": "^2.6.9"
+        "vue-template-compiler": "^2.6.9",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0"
     },
     "dependencies": {
         "css-loader": "^2.1.1",
         "jquery": "^3.3.1",
+        "npm": "^6.9.0",
         "vue": "^2.6.9",
-        "webpack": "^4.29.6"
+        "vuetify": "^1.5.7"
     }
 }

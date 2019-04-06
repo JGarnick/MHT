@@ -6,6 +6,7 @@ body{font-family: 'Markazi Text', serif;}
     padding:5px;
     border:1px solid black;
     font-size: 16px;
+    height: 30px;
 }
 [type=text].w-btn{
     border-bottom-left-radius:3px;
@@ -22,8 +23,11 @@ button.w-input{
     border-bottom-right-radius:3px;
     border-top-right-radius:3px;
     cursor:pointer;
+    align-self: flex-end;
+    height: 30px;
 }
 button.w-input:hover{ background-color:#2f2f2f;}
 .flex{display:flex !important}
 .new-entry > :first-child{margin-right:10px;}
-.new-entry > :nth-child(2){margin-right:10px;}
+.new-entry > button:first-of-type{margin-right:10px;}
+.align-items--fe{align-items: flex-end;}

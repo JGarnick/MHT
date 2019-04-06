@@ -1,14 +1,18 @@
 <template>
-  <div class="new-entry flex">
-    <input class="single" type="text" name="name">
-    <span class="flex">
+  <div class="new-entry flex align-items--fe">
+    <label>
+      <div style="font-size:1.5rem;">Name</div>
+      <input class="single" type="text" name="name">
+    </label>
+    <label>
+      <div style="font-size:1.5rem;">Health</div>
       <input class="w-btn" type="text" name="health" @keyup="number_mask">
-      <button class="w-input">Add</button>
-    </span>
-    <span class="flex">
+    </label>
+    <button class="w-input" @click="add_row()">Add</button>
+    <label>
       <input class="w-btn" type="text" name="how-many">
-      <button class="w-input">Add</button>
-    </span>
+    </label>
+    <button class="w-input" @click="add_multiple()">Add</button>
   </div>
 </template>
 <script>
