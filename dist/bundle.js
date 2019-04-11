@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.common.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst requireComponent = __webpack_require__(\"./components sync [^\\\\.]+\\\\.(vue|js)$\")\r\n\r\nrequireComponent.keys().forEach(fileName => {\r\n    const componentConfig = requireComponent(fileName);\r\n    const componentName = \"v-\" + fileName.replace(/^\\.\\/(.*)\\.\\w+$/, '$1');\r\n\r\n    vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(\r\n        componentName,\r\n        componentConfig.default || componentConfig\r\n    )\r\n\r\n});\r\n\r\njquery__WEBPACK_IMPORTED_MODULE_1___default()(document).ready(function($){\r\n    new vue__WEBPACK_IMPORTED_MODULE_0___default.a({\r\n        el: \"#main\",\r\n        data() {\r\n            return {\r\n                title: \"Monster Health Tracker\",\r\n                rows: []\r\n            }\r\n        },\r\n        methods: {\r\n            add_row(e){\r\n                console.log(e);\r\n                let row = {\r\n                    name: \"\",\r\n                    health_current: 0,\r\n                    health_max: 0,\r\n                    conditions: []\r\n                };\r\n            },\r\n            add_multiple(e){\r\n                console.log(e);\r\n            }\r\n        },\r\n        computed: {\r\n\r\n        }\r\n    });\r\n});\n\n//# sourceURL=webpack:///./build/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.common.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst requireComponent = __webpack_require__(\"./components sync [^\\\\.]+\\\\.(vue|js)$\")\r\n\r\nrequireComponent.keys().forEach(fileName => {\r\n    const componentConfig = requireComponent(fileName);\r\n    const componentName = \"v-\" + fileName.replace(/^\\.\\/(.*)\\.\\w+$/, '$1');\r\n\r\n    vue__WEBPACK_IMPORTED_MODULE_0___default.a.component(\r\n        componentName,\r\n        componentConfig.default || componentConfig\r\n    )\r\n\r\n});\r\n\r\n(function($){\r\n    $(document).ready(function($){\r\n        new vue__WEBPACK_IMPORTED_MODULE_0___default.a({\r\n            el: \"#main\",\r\n            data() {\r\n                return {\r\n                    title: \"Monster Health Tracker\",\r\n                    rows: [\r\n                        {name: \"The Test\", current: \"100\", max: \"100\", conditions: []}\r\n                    ]\r\n                }\r\n            },\r\n            methods: {\r\n                add_row(name, health){\r\n                    let row = {\r\n                        name: name,\r\n                        current: health,\r\n                        max: health,\r\n                        conditions: []\r\n                    };\r\n                    this.rows.push(row);\r\n                },\r\n                add_multiple(){\r\n                    console.log(\"test\");\r\n                },\r\n                delete_row(id){\r\n                    this.rows.splice(id, 1);\r\n                }\r\n            },\r\n            computed: {\r\n    \r\n            }\r\n        });\r\n    });\r\n})(jquery__WEBPACK_IMPORTED_MODULE_1___default.a)\n\n//# sourceURL=webpack:///./build/main.js?");
 
 /***/ }),
 
@@ -105,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var map = {\n\t\"./create-entry.vue\": \"./components/create-entry.vue\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync [^\\\\.]+\\\\.(vue|js)$\";\n\n//# sourceURL=webpack:///./components_sync_nonrecursive_%5B^\\.%5D+\\.(vue%7Cjs)$?");
+eval("var map = {\n\t\"./create-entry.vue\": \"./components/create-entry.vue\",\n\t\"./row.vue\": \"./components/row.vue\"\n};\n\n\nfunction webpackContext(req) {\n\tvar id = webpackContextResolve(req);\n\treturn __webpack_require__(id);\n}\nfunction webpackContextResolve(req) {\n\tif(!__webpack_require__.o(map, req)) {\n\t\tvar e = new Error(\"Cannot find module '\" + req + \"'\");\n\t\te.code = 'MODULE_NOT_FOUND';\n\t\tthrow e;\n\t}\n\treturn map[req];\n}\nwebpackContext.keys = function webpackContextKeys() {\n\treturn Object.keys(map);\n};\nwebpackContext.resolve = webpackContextResolve;\nmodule.exports = webpackContext;\nwebpackContext.id = \"./components sync [^\\\\.]+\\\\.(vue|js)$\";\n\n//# sourceURL=webpack:///./components_sync_nonrecursive_%5B^\\.%5D+\\.(vue%7Cjs)$?");
 
 /***/ }),
 
@@ -142,6 +142,42 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_entry_vue_vue_type_template_id_2655629c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib??vue-loader-options!./create-entry.vue?vue&type=template&id=2655629c& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./components/create-entry.vue?vue&type=template&id=2655629c&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_entry_vue_vue_type_template_id_2655629c___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_create_entry_vue_vue_type_template_id_2655629c___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./components/create-entry.vue?");
+
+/***/ }),
+
+/***/ "./components/row.vue":
+/*!****************************!*\
+  !*** ./components/row.vue ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _row_vue_vue_type_template_id_083c1822___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./row.vue?vue&type=template&id=083c1822& */ \"./components/row.vue?vue&type=template&id=083c1822&\");\n/* harmony import */ var _row_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./row.vue?vue&type=script&lang=js& */ \"./components/row.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ \"./node_modules/vue-loader/lib/runtime/componentNormalizer.js\");\n\n\n\n\n\n/* normalize component */\n\nvar component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(\n  _row_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n  _row_vue_vue_type_template_id_083c1822___WEBPACK_IMPORTED_MODULE_0__[\"render\"],\n  _row_vue_vue_type_template_id_083c1822___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"],\n  false,\n  null,\n  null,\n  null\n  \n)\n\n/* hot reload */\nif (false) { var api; }\ncomponent.options.__file = \"components/row.vue\"\n/* harmony default export */ __webpack_exports__[\"default\"] = (component.exports);\n\n//# sourceURL=webpack:///./components/row.vue?");
+
+/***/ }),
+
+/***/ "./components/row.vue?vue&type=script&lang=js&":
+/*!*****************************************************!*\
+  !*** ./components/row.vue?vue&type=script&lang=js& ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_index_js_vue_loader_options_row_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/vue-loader/lib??vue-loader-options!./row.vue?vue&type=script&lang=js& */ \"./node_modules/vue-loader/lib/index.js?!./components/row.vue?vue&type=script&lang=js&\");\n/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__[\"default\"] = (_node_modules_vue_loader_lib_index_js_vue_loader_options_row_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[\"default\"]); \n\n//# sourceURL=webpack:///./components/row.vue?");
+
+/***/ }),
+
+/***/ "./components/row.vue?vue&type=template&id=083c1822&":
+/*!***********************************************************!*\
+  !*** ./components/row.vue?vue&type=template&id=083c1822& ***!
+  \***********************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_row_vue_vue_type_template_id_083c1822___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../node_modules/vue-loader/lib??vue-loader-options!./row.vue?vue&type=template&id=083c1822& */ \"./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./components/row.vue?vue&type=template&id=083c1822&\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_row_vue_vue_type_template_id_083c1822___WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_row_vue_vue_type_template_id_083c1822___WEBPACK_IMPORTED_MODULE_0__[\"staticRenderFns\"]; });\n\n\n\n//# sourceURL=webpack:///./components/row.vue?");
 
 /***/ }),
 
@@ -209,7 +245,19 @@ eval("/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mixins_filters_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/filters.js */ \"./mixins/filters.js\");\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({ mixins: [_mixins_filters_js__WEBPACK_IMPORTED_MODULE_0__[\"filters\"]] });\r\n\n\n//# sourceURL=webpack:///./components/create-entry.vue?./node_modules/vue-loader/lib??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mixins_filters_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../mixins/filters.js */ \"./mixins/filters.js\");\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = ({ \r\n  mixins: [_mixins_filters_js__WEBPACK_IMPORTED_MODULE_0__[\"filters\"]],\r\n  methods: {\r\n    add_row(){\r\n      let name = document.querySelector(\"[name='name']\");\r\n      let health = document.querySelector(\"[name='health']\");\r\n      \r\n      this.$emit(\"add_row\", name.value, health.value);\r\n      name.value = \"\";\r\n      health.value = \"\";\r\n    }\r\n  }\r\n});\r\n\n\n//# sourceURL=webpack:///./components/create-entry.vue?./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/index.js?!./components/row.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib??vue-loader-options!./components/row.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n    props: [\"data\", \"id\"],\n    methods: {\n        damage(){\n\n        },\n        heal(){\n\n        },\n        delete_row(){\n            this.$emit(\"delete_row\", this.id);\n        }\n    }\n});\n\n\n//# sourceURL=webpack:///./components/row.vue?./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 
@@ -222,6 +270,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mix
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\"div\", { staticClass: \"new-entry flex align-items--fe\" }, [\n    _vm._m(0),\n    _vm._v(\" \"),\n    _c(\"label\", [\n      _c(\"div\", { staticStyle: { \"font-size\": \"1.5rem\" } }, [_vm._v(\"Health\")]),\n      _vm._v(\" \"),\n      _c(\"input\", {\n        staticClass: \"w-btn\",\n        attrs: { type: \"text\", name: \"health\" },\n        on: { keyup: _vm.number_mask }\n      })\n    ]),\n    _vm._v(\" \"),\n    _c(\n      \"button\",\n      {\n        staticClass: \"w-input\",\n        on: {\n          click: function($event) {\n            return _vm.add_row()\n          }\n        }\n      },\n      [_vm._v(\"Add\")]\n    ),\n    _vm._v(\" \"),\n    _vm._m(1),\n    _vm._v(\" \"),\n    _c(\n      \"button\",\n      {\n        staticClass: \"w-input\",\n        on: {\n          click: function($event) {\n            return _vm.add_multiple()\n          }\n        }\n      },\n      [_vm._v(\"Add\")]\n    )\n  ])\n}\nvar staticRenderFns = [\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"label\", [\n      _c(\"div\", { staticStyle: { \"font-size\": \"1.5rem\" } }, [_vm._v(\"Name\")]),\n      _vm._v(\" \"),\n      _c(\"input\", {\n        staticClass: \"single\",\n        attrs: { type: \"text\", name: \"name\" }\n      })\n    ])\n  },\n  function() {\n    var _vm = this\n    var _h = _vm.$createElement\n    var _c = _vm._self._c || _h\n    return _c(\"label\", [\n      _c(\"input\", {\n        staticClass: \"w-btn\",\n        attrs: { type: \"text\", name: \"how-many\" }\n      })\n    ])\n  }\n]\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./components/create-entry.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./components/row.vue?vue&type=template&id=083c1822&":
+/*!*****************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./components/row.vue?vue&type=template&id=083c1822& ***!
+  \*****************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"staticRenderFns\", function() { return staticRenderFns; });\nvar render = function() {\n  var _vm = this\n  var _h = _vm.$createElement\n  var _c = _vm._self._c || _h\n  return _c(\n    \"div\",\n    { staticClass: \"row-container flex just-cont--space-between\" },\n    [\n      _c(\"div\", { staticClass: \"left align-items--ce flex\" }, [\n        _c(\"span\", { staticClass: \"name\" }, [\n          _vm._v(\"\\n            \" + _vm._s(_vm.data.name) + \"\\n        \")\n        ]),\n        _vm._v(\" \"),\n        _c(\"span\", { staticClass: \"max\" }, [\n          _vm._v(\"\\n            \" + _vm._s(_vm.data.max) + \"\\n        \")\n        ]),\n        _vm._v(\" \"),\n        _c(\"span\", { staticClass: \"divide\" }, [\n          _vm._v(\"\\n            /\\n        \")\n        ]),\n        _vm._v(\" \"),\n        _c(\"span\", { staticClass: \"current flex align-items--ce\" }, [\n          _c(\"input\", {\n            attrs: { type: \"text\", name: \"current\" },\n            domProps: { value: _vm.data.max }\n          })\n        ])\n      ]),\n      _vm._v(\" \"),\n      _c(\"div\", { staticClass: \"right flex just-cont--end align-items--ce\" }, [\n        _c(\n          \"button\",\n          {\n            staticClass: \"remove\",\n            attrs: { name: \"remove\" },\n            on: {\n              click: function($event) {\n                return _vm.delete_row()\n              }\n            }\n          },\n          [_c(\"i\", { staticClass: \"far fa-trash-alt\" })]\n        )\n      ])\n    ]\n  )\n}\nvar staticRenderFns = []\nrender._withStripped = true\n\n\n\n//# sourceURL=webpack:///./components/row.vue?./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options");
 
 /***/ }),
 

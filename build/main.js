@@ -21,31 +21,38 @@ requireComponent.keys().forEach(fileName => {
 
 });
 
-jQuery(document).ready(function($){
-    new Vue({
-        el: "#main",
-        data() {
-            return {
-                title: "Monster Health Tracker",
-                rows: []
-            }
-        },
-        methods: {
-            add_row(e){
-                console.log(e);
-                let row = {
-                    name: "",
-                    health_current: 0,
-                    health_max: 0,
-                    conditions: []
-                };
+(function($){
+    $(document).ready(function($){
+        new Vue({
+            el: "#main",
+            data() {
+                return {
+                    title: "Monster Health Tracker",
+                    rows: [
+                        {name: "The Test", current: "100", max: "100", conditions: []}
+                    ]
+                }
             },
-            add_multiple(e){
-                console.log(e);
+            methods: {
+                add_row(name, health){
+                    let row = {
+                        name: name,
+                        current: health,
+                        max: health,
+                        conditions: []
+                    };
+                    this.rows.push(row);
+                },
+                add_multiple(){
+                    console.log("test");
+                },
+                delete_row(id){
+                    this.rows.splice(id, 1);
+                }
+            },
+            computed: {
+    
             }
-        },
-        computed: {
-
-        }
+        });
     });
-});
+})(jQuery)

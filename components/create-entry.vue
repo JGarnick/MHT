@@ -17,5 +17,17 @@
 </template>
 <script>
 import { filters } from "../mixins/filters.js";
-export default { mixins: [filters] };
+export default { 
+  mixins: [filters],
+  methods: {
+    add_row(){
+      let name = document.querySelector("[name='name']");
+      let health = document.querySelector("[name='health']");
+      
+      this.$emit("add_row", name.value, health.value);
+      name.value = "";
+      health.value = "";
+    }
+  }
+};
 </script>
