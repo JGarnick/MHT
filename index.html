@@ -12,7 +12,10 @@
 <body>
     <div id="main">
         <h1>{{title}}</h1>
-        <v-row v-for="(row, index) in rows" :key="index" :id="index" :data="row" @delete_row="delete_row"></v-row>
+        <v-overlay :class="overlay_class">
+            <v-row v-for="(row, index) in rows" :key="index" :id="index" :data="row" @delete_row="delete_row" @damage="damage" @heal="heal"></v-row>
+        </v-overlay>
+        
         <v-create-entry @add_row="add_row" @add_multiple="add_multiple"></v-create-entry>
     </div>
     <script src="./dist/bundle.js" type="text/javascript"></script>

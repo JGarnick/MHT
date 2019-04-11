@@ -12,9 +12,10 @@
                 /
             </span>
             <span class="current flex align-items--ce">
-                <input type="text" name="current" :value="data.max">
+                <input type="text" name="current" :value="data.max" size="3">
             </span>
-           
+           <button class="damage" name="damage" @click="damage()"><i class="fas fa-fist-raised"></i></button>
+           <button class="heal" name="heal" @click="heal()"><i class="fas fa-heart"></i></button>
         </div>
         <div class="right flex just-cont--end align-items--ce">
             <button name="remove" class="remove" @click="delete_row()"><i class="far fa-trash-alt"></i></button>
@@ -26,10 +27,10 @@
         props: ["data", "id"],
         methods: {
             damage(){
-
+                this.$emit("damage", this.id);
             },
             heal(){
-
+                this.$emit("heal", this.id);
             },
             delete_row(){
                 this.$emit("delete_row", this.id);

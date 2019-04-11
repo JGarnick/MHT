@@ -34,8 +34,10 @@ button.w-input:hover{ background-color:#2f2f2f;}
 .align-items--ce{align-items: center;}
 .row-container{
     border: 1px solid black;
+    border-radius:3px;
     font-size: 40px;
     padding: 10px 20px;
+    margin: 10px 0;
 }
 .just-cont--end{
     justify-content: flex-end;
@@ -65,4 +67,54 @@ button.remove {
 button.remove:hover{
     color:white;
     background-color:red;
+}
+button.damage{
+    background-color: white;
+    border: 0;
+    font-size: 30px;
+    color: darkred;
+    outline: 1px solid;
+    cursor: pointer;
+    margin-right:5px;
+}
+button.damage:hover{
+    background-color:darkred;
+    color:white;
+}
+button.heal{
+    background-color: white;
+    border: 0;
+    font-size: 30px;
+    color: darkgreen;
+    outline: 1px solid;
+    cursor: pointer;
+    margin-right:5px;
+}
+button.heal:hover{
+    background-color:darkgreen;
+    color:white;
+}
+.overlay-container{position:relative;}
+.overlay:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: " ";
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    height: 0%;
+    transition: height .2s;
+}
+.overlay-container.heal .overlay:after,
+.overlay-container.damage .overlay:after{
+    height:100%;
+}
+.overlay-container > input{
+    position:absolute;
+    top: CALC(50% - 14px);
+    font-size: 24px;
+    max-width: 60px;
+    left: CALC(50% - 30px);
 }

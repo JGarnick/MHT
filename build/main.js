@@ -30,7 +30,8 @@ requireComponent.keys().forEach(fileName => {
                     title: "Monster Health Tracker",
                     rows: [
                         {name: "The Test", current: "100", max: "100", conditions: []}
-                    ]
+                    ],
+                    overlay_class: ""
                 }
             },
             methods: {
@@ -48,6 +49,14 @@ requireComponent.keys().forEach(fileName => {
                 },
                 delete_row(id){
                     this.rows.splice(id, 1);
+                },
+                damage(id){
+                    this.overlay_class = "damage";
+                    console.log("damage", id);
+                },
+                heal(id){
+                    this.overlay_class = "heal";
+                    console.log("heal", id);
                 }
             },
             computed: {
