@@ -44,8 +44,17 @@ requireComponent.keys().forEach(fileName => {
                     };
                     this.rows.push(row);
                 },
-                add_multiple(){
-                    console.log("test");
+                add_many(name, health, count){
+                    for( let i = 1; i <= count;i++){
+                        
+                        let row = {
+                            name: name + " " + i,
+                            current: health,
+                            max: health,
+                            conditions: []
+                        };
+                        this.rows.push(row);
+                    }
                 },
                 delete_row(id){
                     this.rows.splice(id, 1);

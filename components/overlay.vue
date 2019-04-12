@@ -2,20 +2,23 @@
     <div class="overlay-container">
         <div class="overlay"></div>
         <slot></slot>
-        <input @keyup="key" type="number" pattern="\d*" min=0 max=999 class="change-hp" value="0">
+        <input @keyup="key" type="text" class="change-hp" size="3" value="0">
     </div>
 </template>
 <script>
+import $ from "jquery";
     export default {
         props: ["type"],
         methods: {
             key(e){
-                if(e.key == "Enter"){
-                    this.$emit("change_hp", e.target.value);
-                }
-                
                 if(isNaN(parseInt(e.key))){
-                    // ???
+                    if(e.key == "Enter"){
+                        this.$emit("change_hp", e.target.value);
+                        return;
+                    }
+                    
+                    let core_val = $(e.target).val().replace(/\D*/gm, '');
+                    $(e.target).val(core_val);
                 }
             }
         }

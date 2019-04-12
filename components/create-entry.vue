@@ -12,7 +12,7 @@
     <label>
       <input class="w-btn" type="text" name="how-many">
     </label>
-    <button class="w-input" @click="add_multiple()">Add</button>
+    <button class="w-input" @click="add_many()">Add</button>
   </div>
 </template>
 <script>
@@ -27,6 +27,16 @@ export default {
       this.$emit("add_row", name.value, health.value);
       name.value = "";
       health.value = "";
+    },
+    add_many(){
+      let name = document.querySelector("[name='name']");
+      let health = document.querySelector("[name='health']");
+      let count = document.querySelector("[name='how-many']");
+      
+      this.$emit("add_many", name.value, health.value, count.value);
+      name.value = "";
+      health.value = "";
+      count.value = "";
     }
   }
 };
