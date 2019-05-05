@@ -12,9 +12,13 @@
 <body>
     <div id="main">
         <h1>{{title}}</h1>
-        <v-overlay :class="overlay_class">
-            <v-row v-for="(row, index) in rows" :key="index" :id="index" :data="row" @delete_row="delete_row" @damage="damage" @heal="heal"></v-row>
-        </v-overlay>
+        <template v-for="(row, index) in rows">
+            {{index}}{{row}}{{row.overlay_class}}
+            <v-overlay :overlay_class="row.overlay_class" :key="index" :id="index" @change_hp="change_hp">
+                <v-row :id="index" slot="row" :data="row" @damage="damage" @heal="heal" @delete_row="delete_row"></v-row>
+            </v-overlay>
+        </template>
+        
         
         <v-create-entry @add_row="add_row" @add_many="add_many"></v-create-entry>
     </div>

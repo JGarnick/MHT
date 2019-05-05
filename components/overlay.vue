@@ -1,26 +1,29 @@
+
+
 <template>
-    <div class="overlay-container">
+    <div class="overlay-container" :class="overlay_class">
         <div class="overlay"></div>
-        <slot></slot>
+        <slot name="row"></slot>
         <input @keyup="key" type="text" class="change-hp" size="3" value="0">
+        <!-- <button class="accept">Accept</button> -->
     </div>
 </template>
 <script>
-import $ from "jquery";
-    export default {
-        props: ["type"],
-        methods: {
-            key(e){
-                if(isNaN(parseInt(e.key))){
-                    if(e.key == "Enter"){
-                        this.$emit("change_hp", e.target.value);
-                        return;
-                    }
-                    
-                    let core_val = $(e.target).val().replace(/\D*/gm, '');
-                    $(e.target).val(core_val);
+
+export default {
+    props: ["type", "overlay_class", "id"],
+    methods: {
+        key(e){
+            if(isNaN(parseInt(e.key))){
+                if(e.key == "Enter"){
+                    this.$emit("change_hp", this.overlay_class, e.target.value, this.id);
+                    return;
                 }
+                
+                let core_val = e.target.value.replace(/\D*/gm, '');
+                e.target.value = core_val;
             }
         }
     }
+}
 </script>

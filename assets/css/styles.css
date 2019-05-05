@@ -105,7 +105,7 @@ button.heal:hover{
     background-color: rgba(0, 0, 0, 0.8);
     border-radius: 4px;
     height: 0%;
-    transition: height .2s;
+    transition: height .1s;
 }
 .overlay-container.heal .overlay:after,
 .overlay-container.damage .overlay:after{
@@ -113,8 +113,19 @@ button.heal:hover{
 }
 .overlay-container > input{
     position:absolute;
-    top: CALC(50% - 14px);
+    top:0;
+    height:0px;
+    padding: 0;
+    border-width:0px;
     font-size: 24px;
     max-width: 60px;
     left: CALC(50% - 30px);
+    transition:height .1s, top .1s;
+}
+.overlay-container.damage > input,
+.overlay-container.heal > input{
+    top: CALC(50% - 14px);
+    height: 30px;
+    padding: 5px;
+    border-width:1px;
 }

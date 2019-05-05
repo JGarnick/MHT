@@ -29,9 +29,13 @@ requireComponent.keys().forEach(fileName => {
                 return {
                     title: "Monster Health Tracker",
                     rows: [
-                        {name: "The Test", current: "100", max: "100", conditions: []}
-                    ],
-                    overlay_class: ""
+                        {
+                            name: "The Test", current: "100", max: "100", conditions: ["exhausted"], overlay_class:""
+                        },
+                        {
+                            name: "The Test 2", current: "100", max: "100", conditions: ["poisoned", "paralyzed"], overlay_class:""
+                        }
+                    ]
                 }
             },
             methods: {
@@ -40,7 +44,8 @@ requireComponent.keys().forEach(fileName => {
                         name: name,
                         current: health,
                         max: health,
-                        conditions: []
+                        conditions: [],
+                        overlay_class: ""
                     };
                     this.rows.push(row);
                 },
@@ -51,7 +56,8 @@ requireComponent.keys().forEach(fileName => {
                             name: name + " " + i,
                             current: health,
                             max: health,
-                            conditions: []
+                            conditions: [],
+                            overlay_class: ""
                         };
                         this.rows.push(row);
                     }
@@ -59,13 +65,21 @@ requireComponent.keys().forEach(fileName => {
                 delete_row(id){
                     this.rows.splice(id, 1);
                 },
+                change_hp(type, amount, id){                    
+                    if(type === "damage"){
+                        this.rows[id].current = parseInt(this.rows[id].current) - parseInt(amount);
+                    }
+
+                    if(type === "heal"){
+                        this.rows[id].current = parseInt(this.rows[id].current) + parseInt(amount);
+                    }
+                    this.rows[id].overlay_class = "";
+                },
                 damage(id){
-                    this.overlay_class = "damage";
-                    console.log("damage", id);
+                    this.rows[id].overlay_class="damage";
                 },
                 heal(id){
-                    this.overlay_class = "heal";
-                    console.log("heal", id);
+                    this.rows[id].overlay_class="heal";
                 }
             },
             computed: {
