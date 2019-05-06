@@ -13,7 +13,6 @@
     <div id="main">
         <h1>{{title}}</h1>
         <template v-for="(row, index) in rows">
-            {{index}}{{row}}{{row.overlay_class}}
             <v-overlay :overlay_class="row.overlay_class" :key="index" :id="index" @change_hp="change_hp">
                 <v-row :id="index" slot="row" :data="row" @damage="damage" @heal="heal" @delete_row="delete_row"></v-row>
             </v-overlay>

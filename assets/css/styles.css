@@ -28,6 +28,7 @@ button.w-input{
 }
 button.w-input:hover{ background-color:#2f2f2f;}
 .flex{display:flex !important}
+.flex.wrap{ flex-wrap:wrap; }
 .new-entry > :first-child{margin-right:10px;}
 .new-entry > button:first-of-type{margin-right:10px;}
 .align-items--fe{align-items: flex-end;}
@@ -128,4 +129,15 @@ button.heal:hover{
     height: 30px;
     padding: 5px;
     border-width:1px;
+}
+.conditions-wrapper{
+    flex-basis:100%;
+    flex-grow:1;
+    flex-shrink:1;
+}
+.max{margin-right:10px;}
+.condition{ 
+    border:1px solid black; 
+    border-radius:4px;
+    max-width:40px;
 }
