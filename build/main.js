@@ -30,10 +30,10 @@ requireComponent.keys().forEach(fileName => {
                     title: "Monster Health Tracker",
                     rows: [
                         {
-                            name: "The Test", current: "100", max: "100", conditions: ["exhausted"], overlay_class:""
+                            name: "The Test", current: "100", max: "100", conditions: ["exhausted", "dying", "deaf"], overlay_class:""
                         },
                         {
-                            name: "The Test 2", current: "100", max: "100", conditions: ["poisoned", "paralyzed"], overlay_class:""
+                            name: "The Test 2", current: "100", max: "100", conditions: ["poisoned", "paralyzed", "stunned", "diseased", "cursed"], overlay_class:""
                         }
                     ]
                 }

@@ -20,7 +20,7 @@
         <div class="right flex just-cont--end align-items--ce">
             <button name="remove" class="remove" @click="delete_row()"><i class="far fa-trash-alt"></i></button>
         </div>
-        <div class="conditions-wrapper">
+        <div class="conditions-wrapper flex">
             <v-condition v-for="(condition, index) in data.conditions" :key="index" :condition="condition"></v-condition>
         </div>
     </div>

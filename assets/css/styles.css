@@ -137,7 +137,9 @@ button.heal:hover{
 }
 .max{margin-right:10px;}
 .condition{ 
-    border:1px solid black; 
-    border-radius:4px;
-    max-width:40px;
+    max-width:30px;
+    flex:1;
+}
+.condition svg{
+    display:block;
 }
