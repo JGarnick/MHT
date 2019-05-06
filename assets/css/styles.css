@@ -139,6 +139,10 @@ button.heal:hover{
 .condition{ 
     max-width:30px;
     flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:0 10px;
 }
 .condition svg{
     display:block;
