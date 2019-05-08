@@ -30,29 +30,42 @@ requireComponent.keys().forEach(fileName => {
 ]
 
 */
-(function($){
-    $(document).ready(function($){
+(function($) {
+    $(document).ready(function($) {
         new Vue({
             el: "#main",
             data() {
                 return {
                     title: "Monster Health Tracker",
-                    rows: [
-                        {
-                            name: "The Test", current: "100", max: "100", conditions: [
+                    rows: [{
+                            name: "The Test",
+                            current: "100",
+                            max: "100",
+                            conditions: [
                                 "prone", "advantage", "blind", "exhausted", "dying", "deaf", "petrified", 'sleep', 'bleeding', "grappled", "rooted", "marked", "stealthed"
-                            ], overlay_class:""
+                            ],
+                            overlay_class: ""
                         },
                         {
-                            name: "The Test 2", current: "100", max: "100", conditions: [
-                                "blessed", "confused", "disadvantage", "poisoned", "paralyzed", "stunned", "diseased", "cursed", "silent" , "restrained", "snared", "inspired", "mage armor", "shield"
-                            ], overlay_class:""
+                            name: "The Test 2",
+                            current: "100",
+                            max: "100",
+                            conditions: [
+                                "blessed", "confused", "disadvantage", "poisoned", "paralyzed", "stunned", "diseased", "cursed", "silent", "restrained", "snared", "inspired", "mage armor", "shield"
+                            ],
+                            overlay_class: ""
                         }
+                    ],
+                    all_conditions: [
+                        "blind", "exhausted", "dying", "deaf", "petrified", 'sleep', 'bleeding',
+                        "poisoned", "paralyzed", "stunned", "diseased", "cursed", "silent", "restrained",
+                        "grappled", "rooted", "snared", "disadvantage", "advantage", "prone", "confused",
+                        "blessed", "shield", "mage armor", "marked", "stealthed", "inspired",
                     ]
                 }
             },
             methods: {
-                add_row(name, health){
+                add_row(name, health) {
                     let row = {
                         name: name,
                         current: health,
@@ -62,9 +75,9 @@ requireComponent.keys().forEach(fileName => {
                     };
                     this.rows.push(row);
                 },
-                add_many(name, health, count){
-                    for( let i = 1; i <= count;i++){
-                        
+                add_many(name, health, count) {
+                    for (let i = 1; i <= count; i++) {
+
                         let row = {
                             name: name + " " + i,
                             current: health,
@@ -75,28 +88,28 @@ requireComponent.keys().forEach(fileName => {
                         this.rows.push(row);
                     }
                 },
-                delete_row(id){
+                delete_row(id) {
                     this.rows.splice(id, 1);
                 },
-                change_hp(type, amount, id){                    
-                    if(type === "damage"){
+                change_hp(type, amount, id) {
+                    if (type === "damage") {
                         this.rows[id].current = parseInt(this.rows[id].current) - parseInt(amount);
                     }
 
-                    if(type === "heal"){
+                    if (type === "heal") {
                         this.rows[id].current = parseInt(this.rows[id].current) + parseInt(amount);
                     }
                     this.rows[id].overlay_class = "";
                 },
-                damage(id){
-                    this.rows[id].overlay_class="damage";
+                damage(id) {
+                    this.rows[id].overlay_class = "damage";
                 },
-                heal(id){
-                    this.rows[id].overlay_class="heal";
+                heal(id) {
+                    this.rows[id].overlay_class = "heal";
                 }
             },
             computed: {
-    
+
             }
         });
     });

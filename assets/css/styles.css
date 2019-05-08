@@ -1,61 +1,105 @@
 @import url('https://fonts.googleapis.com/css?family=Markazi+Text');
 
-body{font-family: 'Markazi Text', serif;}
-[type=text]{
-    box-sizing:border-box;
-    padding:5px;
-    border:1px solid black;
+body {
+    font-family: 'Markazi Text', serif;
+}
+
+[type=text] {
+    box-sizing: border-box;
+    padding: 5px;
+    border: 1px solid black;
     font-size: 16px;
     height: 30px;
 }
-[type=text].w-btn{
-    border-bottom-left-radius:3px;
-    border-top-left-radius:3px;
+
+[type=text].w-btn {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
 }
-[type=text].single{
-    border-radius:3px;
+
+[type=text].single {
+    border-radius: 3px;
 }
-button.w-input{
+
+button.w-input {
     border: 0;
     padding: 8px;
     background-color: #565656;
-    color:white;
-    border-bottom-right-radius:3px;
-    border-top-right-radius:3px;
-    cursor:pointer;
+    color: white;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
     align-self: flex-end;
     height: 30px;
 }
-button.w-input:hover{ background-color:#2f2f2f;}
-.flex{display:flex !important}
-.flex.wrap{ flex-wrap:wrap; }
-.new-entry > :first-child{margin-right:10px;}
-.new-entry > button:first-of-type{margin-right:10px;}
-.align-items--fe{align-items: flex-end;}
-.align-items--ce{align-items: center;}
-.row-container{
+
+button.w-input:hover {
+    background-color: #2f2f2f;
+}
+
+.flex {
+    display: flex !important
+}
+
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
+.new-entry> :first-child {
+    margin-right: 10px;
+}
+
+.new-entry>button:first-of-type {
+    margin-right: 10px;
+}
+
+.align-items--fe {
+    align-items: flex-end;
+}
+
+.align-items--ce {
+    align-items: center;
+}
+
+.row-container {
     border: 1px solid black;
-    border-radius:3px;
+    border-radius: 3px;
     font-size: 40px;
     padding: 10px 20px;
     margin: 10px 0;
 }
-.just-cont--end{
+
+.just-cont--end {
     justify-content: flex-end;
 }
-.just-cont--space-between{
+
+.just-cont--space-between {
     justify-content: space-between;
 }
+
 input[name="current"] {
     font-size: 40px;
     border: 0;
     padding: 0;
     font-family: 'Markazi Text', serif;
 }
-.left .divide{ margin:0 5px; }
-.left .name{ padding-right:30px; }
-.row-container > .left{max-width: 80%;}
-.row-container > .right{max-width: 20%;}
+
+.left .divide {
+    margin: 0 5px;
+}
+
+.left .name {
+    padding-right: 30px;
+}
+
+.row-container>.left {
+    max-width: 80%;
+}
+
+.row-container>.right {
+    max-width: 20%;
+}
+
 button.remove {
     font-size: 28px;
     color: red;
@@ -65,37 +109,71 @@ button.remove {
     padding: 4px 15px;
     cursor: pointer;
 }
-button.remove:hover{
-    color:white;
-    background-color:red;
+
+button.remove:hover {
+    color: white;
+    background-color: red;
 }
-button.damage{
+
+button.damage {
     background-color: white;
     border: 0;
     font-size: 30px;
     color: darkred;
     outline: 1px solid;
     cursor: pointer;
-    margin-right:5px;
+    margin-right: 5px;
 }
-button.damage:hover{
-    background-color:darkred;
-    color:white;
+
+button.damage:hover {
+    background-color: darkred;
+    color: white;
 }
-button.heal{
+
+button.heal {
     background-color: white;
     border: 0;
     font-size: 30px;
     color: darkgreen;
     outline: 1px solid;
     cursor: pointer;
-    margin-right:5px;
+    margin-right: 5px;
 }
-button.heal:hover{
-    background-color:darkgreen;
-    color:white;
+
+button.heal:hover {
+    background-color: darkgreen;
+    color: white;
 }
-.overlay-container{position:relative;}
+
+button.conditions-button {
+    background-color: white;
+    border: 0;
+    font-size: 30px;
+    outline: 1px solid;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button.conditions-button:hover {
+    background-color: black;
+}
+
+button.conditions-button svg {
+    display: block;
+    fill: black;
+    width: 30px;
+    height: 34px;
+}
+
+button.conditions-button:hover svg {
+    display: block;
+    fill: white;
+}
+
+.overlay-container {
+    position: relative;
+}
+
 .overlay:after {
     position: absolute;
     top: 0;
@@ -108,42 +186,69 @@ button.heal:hover{
     height: 0%;
     transition: height .1s;
 }
+
 .overlay-container.heal .overlay:after,
-.overlay-container.damage .overlay:after{
-    height:100%;
+.overlay-container.damage .overlay:after {
+    height: 100%;
 }
-.overlay-container > input{
-    position:absolute;
-    top:0;
-    height:0px;
+
+.overlay-container>input {
+    position: absolute;
+    top: 0;
+    height: 0px;
     padding: 0;
-    border-width:0px;
+    border-width: 0px;
     font-size: 24px;
     max-width: 60px;
     left: CALC(50% - 30px);
-    transition:height .1s, top .1s;
+    transition: height .1s, top .1s;
 }
-.overlay-container.damage > input,
-.overlay-container.heal > input{
+
+.overlay-container.damage>input,
+.overlay-container.heal>input {
     top: CALC(50% - 14px);
     height: 30px;
     padding: 5px;
-    border-width:1px;
+    border-width: 1px;
 }
-.conditions-wrapper{
-    flex-basis:100%;
-    flex-grow:1;
-    flex-shrink:1;
+
+.conditions-wrapper {
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
-.max{margin-right:10px;}
-.condition{ 
-    max-width:30px;
-    flex:1;
+
+.max {
+    margin-right: 10px;
+}
+
+.condition {
+    max-width: 30px;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin:0 10px;
+    margin: 0 10px;
 }
-.condition svg{
-    display:block;
+
+.condition svg {
+    display: block;
+}
+
+.conditions-container {
+    position: absolute;
+    border: 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: white;
+    max-width: 500px;
+}
+
+.conditions-container .condition {
+    min-width: 30px;
 }

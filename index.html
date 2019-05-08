@@ -14,11 +14,11 @@
         <h1>{{title}}</h1>
         <template v-for="(row, index) in rows">
             <v-overlay :overlay_class="row.overlay_class" :key="index" :id="index" @change_hp="change_hp">
-                <v-row :id="index" slot="row" :data="row" @damage="damage" @heal="heal" @delete_row="delete_row"></v-row>
+                <v-row :all_conditions="all_conditions" :id="index" slot="row" :data="row" @damage="damage" @heal="heal" @delete_row="delete_row"></v-row>
             </v-overlay>
         </template>
-        
-        
+
+
         <v-create-entry @add_row="add_row" @add_many="add_many"></v-create-entry>
     </div>
     <script src="./dist/bundle.js" type="text/javascript"></script>
