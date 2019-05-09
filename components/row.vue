@@ -43,16 +43,13 @@ const $j = require("jquery");
 export default {
 	props: ["data", "id", "all_conditions"],
 	mounted() {
-		let position = $j(this.$el)
-			.find(".conditions-button")
-			.offset();
+		let button = $j(this.$el).find(".conditions-button");
+		let position = button.position();
+		let container = $j(this.$el).find(".conditions-container");
 
-		$j(this.$el)
-			.find(".conditions-container")
-			.offset({
-				top: position.top - 70,
-				left: position.left
-			})
+		container
+			.css("top", position.top + button.outerHeight() + 15)
+			.css("left", position.left)
 			.hide();
 	},
 	methods: {
