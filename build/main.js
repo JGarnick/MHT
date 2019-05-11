@@ -20,16 +20,7 @@ requireComponent.keys().forEach(fileName => {
     )
 
 });
-// All conditions:
-/*
-[
-    "blind", "exhausted", "dying", "deaf", "petrified", 'sleep', 'bleeding', 
-    "poisoned", "paralyzed", "stunned", "diseased", "cursed", "silent", "restrained", 
-    "grappled", "rooted", "snared", "disadvantage", "advantage", "prone", "confused",
-    "blessed", "shield", "mage armor", "marked", "stealthed", "inspired", 
-]
 
-*/
 (function($) {
     $(document).ready(function($) {
         new Vue({
@@ -41,18 +32,14 @@ requireComponent.keys().forEach(fileName => {
                             name: "The Test",
                             current: "100",
                             max: "100",
-                            conditions: [
-                                "prone", "advantage", "blind", "exhausted", "dying", "deaf", "petrified", 'sleep', 'bleeding', "grappled", "rooted", "marked", "stealthed"
-                            ],
+                            conditions: ["poisoned"],
                             overlay_class: ""
                         },
                         {
                             name: "The Test 2",
                             current: "100",
                             max: "100",
-                            conditions: [
-                                "blessed", "confused", "disadvantage", "poisoned", "paralyzed", "stunned", "diseased", "cursed", "silent", "restrained", "snared", "inspired", "mage armor", "shield"
-                            ],
+                            conditions: [],
                             overlay_class: ""
                         }
                     ],
