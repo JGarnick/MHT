@@ -47,6 +47,16 @@ export default {
 			.css("top", position.top + button.outerHeight() + 15)
 			.css("left", position.left)
 			.hide();
+		let el = $j(this.$el).find(".conditions-container");
+		$j(window).on("click", (e) => {
+			if($j(e.target).is("svg") && $j(e.target).closest(".conditions-button").length){
+				e.target = $j(e.target).closest(".conditions-button")[0];
+			}
+			if(!$j(e.target).closest(".conditions-container").is(el) && el.is(":visible") && !$j(e.target).is(button)){
+				el.hide();
+				return;
+			}
+		});
 	},
 	methods: {
 		damage() {
