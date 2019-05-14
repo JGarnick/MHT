@@ -61,9 +61,13 @@ export default {
 	methods: {
 		damage() {
 			this.$emit("damage", this.id);
+			$j(this.$el).next(".change-hp").val("");
+			$j(this.$el).next(".change-hp").focus();
 		},
 		heal() {
 			this.$emit("heal", this.id);
+			$j(this.$el).next(".change-hp").val("");
+			$j(this.$el).next(".change-hp").focus();
 		},
 		delete_row() {
 			this.$emit("delete_row", this.id);

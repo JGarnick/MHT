@@ -16,6 +16,7 @@ export default {
         key(e){
             if(isNaN(parseInt(e.key))){
                 if(e.key == "Enter"){
+                    if(isNaN(e.target.value)){ e.target.value = 0; }
                     this.$emit("change_hp", this.overlay_class, e.target.value, this.id);
                     return;
                 }
