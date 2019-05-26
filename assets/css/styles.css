@@ -211,6 +211,32 @@ button.conditions-button:hover svg {
     padding: 5px;
     border-width: 1px;
 }
+.overlay-container.damage>button,
+.overlay-container.heal>button {
+    top: CALC(50% - 14px);
+    height: 30px;
+    padding: 5px;
+}
+button.accept{
+    top: 0;
+    height: 0px;
+    padding: 0;
+    border-width: 0px;
+    font-size: 20px;
+    left: CALC(50% + 40px);
+    border: 0;
+    border-radius: 3px;
+    position: absolute;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #2dff3b;
+    transition: height .1s, top .1s;
+}
+
+button.accept:hover{
+    color: #2dff3b;
+    background-color:black;
+}
 
 .conditions-wrapper {
     flex-basis: 100%;
@@ -266,3 +292,4 @@ button.conditions-button:hover svg {
     max-width: 500px;
     z-index:99;
 }
+
