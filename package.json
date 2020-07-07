@@ -15,7 +15,7 @@
     "dependencies": {
         "css-loader": "^2.1.1",
         "jquery": "^3.5.0",
-        "npm": "^6.9.0",
+        "npm": "^6.14.6",
         "vue": "^2.6.9",
         "vuetify": "^1.5.7"
     }
